@@ -1,4 +1,4 @@
-package br.com.disapps.viewmodelexample
+package br.com.disapps.databindingexample
 
 import org.junit.Test
 
