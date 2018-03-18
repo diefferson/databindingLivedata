@@ -6,8 +6,8 @@
 
     <data>
         <variable
-            name="data"
-            type="br.com.disapps.databindingexample.Data"/>
+            name="viewModel"
+            type="br.com.disapps.databindingexample.MainViewModel"/>
     </data>
 
     <android.support.constraint.ConstraintLayout
@@ -20,7 +20,7 @@
             android:id="@+id/textView1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@{data.value1}"
+            android:text="@{viewModel.value1.toString()}"
             android:textSize="30sp"
             android:textStyle="bold"
             android:textAlignment="center"
@@ -33,7 +33,7 @@
             android:id="@+id/textView2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@{data.value2}"
+            android:text="@{viewModel.value2.toString()}"
             android:textSize="30sp"
             android:textStyle="bold"
             android:textAlignment="center"
@@ -48,6 +48,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Value 1"
+            android:onClick="@{viewModel::addValue1}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView1"
@@ -58,6 +59,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Value 2"
+            android:onClick="@{viewModel::addValue2}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView2"
@@ -70,6 +72,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:text="Reset"
+            android:onClick="@{viewModel::reset}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
